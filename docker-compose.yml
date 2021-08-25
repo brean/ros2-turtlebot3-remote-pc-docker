@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  turtlebot:
+    # run the robot ros core as well as a headless gazebo simulation
+    image: brean/ros-turtlebot3-cartographer:foxy
+    tty: True
+    container_name: ros-foxy
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      args:
+        ROS_DISTRO: foxy
+    environment: 
+      - DISPLAY
+      - "ROS_DISTRO=foxy"
+      - NVIDIA_VISIBLE_DEVICES=all # for docker-nvidia2
+      - NVIDIA_DRIVER_CAPABILITIES=all # for docker-nvidia2
+    privileged: true  # for gazebo gui
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro  # for gazebo gui
+      - ./map:/map:z  # to save the map
+    network_mode:
+      host
+    # command: ["ros2", "launch", "turtlebot3_cartographer", "cartographer.launch.py"]
