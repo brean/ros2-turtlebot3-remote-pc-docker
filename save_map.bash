@@ -1,2 +1,2 @@
 #!/bin/bash
-./turtlebot.bash rosrun map_server map_saver -f /map/map.yml
+./turtlebot.bash ros2 run nav2_map_server map_saver_cli -f /map/map.yml
