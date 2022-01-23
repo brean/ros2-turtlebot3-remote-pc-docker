@@ -1,7 +1,9 @@
 # ROS 2 foxy "REMOTE-PC" navigation in docker
-Note that you don't need to run the build script, the image is pushed to dockerhub, just run `docker-compose pull`!
+**Note that you don't need to run the build script, the image is pushed to dockerhub, just run `docker-compose pull`!**
 
 Run turtlebot3-navigation/cartographer in a local docker container so you can run it if you don't have Ubuntu 20.04 installed.
+
+If you also like to have a simulated robot in gazebo take a look at [ros-turtlebot3-gazebo](../ros-turtlebot3-gazebo)
 
 Don't forget to configure ROS_DOMAIN_ID (default 30) and TURTLEBOT3_MODEL (default burger)
 
