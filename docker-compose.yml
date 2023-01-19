@@ -20,10 +20,5 @@ services:
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:ro  # for gazebo gui
       - ./map:/map:z  # to save the map
-    networks:
-      - turtlebot
     # command: ["ros2", "launch", "turtlebot3_cartographer", "cartographer.launch.py"]
-
-networks:
-  turtlebot:
-    external: true
+    network_mode: host
