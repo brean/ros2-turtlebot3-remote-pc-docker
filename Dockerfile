@@ -13,6 +13,9 @@ RUN apt-get update \
     ros-${ROS_DISTRO}-rviz2 \
   && rm -rf /var/lib/apt/lists/*
 
+RUN mkdir -p /root/turtlebot3_navigation2_fix/param/
+COPY ./turtlebot3_navigation2_fix/param/burger.yaml /root/turtlebot3_navigation2_fix/param/burger.yaml
+
 ARG ROS_DOMAIN_ID=30
 ARG TURTLEBOT3_MODEL=burger
 
