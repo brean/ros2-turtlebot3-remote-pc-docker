@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  turtlebot:
+  remote_pc:
     # run the robot ros core as well as a headless gazebo simulation
-    image: brean/ros-turtlebot3-cartographer:foxy
+    image: brean/ros2-turtlebot3-remote_pc:foxy
     tty: True
     container_name: ros-foxy
     build:

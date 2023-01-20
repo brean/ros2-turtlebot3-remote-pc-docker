@@ -10,13 +10,13 @@ what you are trying to do.
 The preferred way to contribute to **ROS 2 turtlebot 3 navigation docker** is to fork the main repository on Gitlab, then submit a "pull request"
 (PR):
 
-1. Fork the [project repository](git@github.com:brean/ros-turtlebot3-navigation-docker.git):
+1. Fork the [project repository](git@github.com:brean/ros2-turtlebot3-remote-pc-docker.git):
    click on the 'Fork' button near the top of the page. This creates a copy of
    the code under your account on the Gitlab server.
 
 3. Clone this copy to your local disk:
 
-        $ git clone git@github.com:YourLogin/ros-turtlebot3-navigation-docker.git
+        $ git clone git@github.com:YourLogin/ros2-turtlebot3-remote-pc-docker.git
 
 4. Create a branch to hold your changes:
 
@@ -49,4 +49,4 @@ Summary: maintainer can push minor changes directly, pull request + 1 reviewer f
 
 ## Project Roadmap
 
-Check the [Issue Tracker](https://github.com/brean/ros-turtlebot3-navigation-docker/issues) for roadmap planning. 
+Check the [Issue Tracker](https://github.com/brean/ros2-turtlebot3-remote-pc-docker/issues) for roadmap planning. 

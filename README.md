@@ -1,7 +1,7 @@
 # ROS 2 foxy "REMOTE-PC" navigation in docker
 **Note that you don't need to run the build script, the image is pushed to dockerhub, just run `docker-compose pull`!**
 
-Run turtlebot3-navigation/cartographer in a local docker container.
+Run turtlebot3 REMOTE-PC nodes for navigation and cartographer in a local docker container.
 
 # Motivation
 This allows you either to communicate with a robot that runs ROS 2-foxy while your PC runs another Linux operating system or if you want to test without a full ROS-installation on your PC.
@@ -29,7 +29,7 @@ ros2 launch turtlebot3_bringup robot.launch.py
 1. after you are happy with it run `save_map.bash` in a second terminal.
 1. stop the cartographer and run `navigation.bash`.
 
-Note that you can run any command from your terminal by prefixing it with "./turtlebot.bash", take a look at the other bash-scripts in this folder
+Note that you can run any command from your terminal by prefixing it with "./remote.bash", take a look at the other bash-scripts in this folder
 
 ### Autonomous navigation in simulation
 See [ros2-turtlebot3-gazebo-docker](https://github.com/brean/ros2-turtlebot3-gazebo-docker) for the integration of a simulated ROS 2 turtlebot using the docker-container and scripts from this repo for the "Remote-PC".
@@ -39,7 +39,7 @@ Don't forget to run `docker-compose down` when you are done.
 
 ## Contributing
 
-Please use the [issue tracker](https://github.com/brean/ros-turtlebot3-navigation-docker/issues) to submit bug reports and feature requests. Please use merge requests as described [here](/CONTRIBUTING.md) to add/adapt functionality. 
+Please use the [issue tracker](https://github.com/brean/ros2-turtlebot3-remote-pc-docker/issues) to submit bug reports and feature requests. Please use merge requests as described [here](/CONTRIBUTING.md) to add/adapt functionality. 
 
 ## License
 
