@@ -3,9 +3,9 @@ version: '3'
 services:
   remote_pc:
     # run the robot ros core as well as a headless gazebo simulation
-    image: brean/ros2-turtlebot3-remote_pc:foxy
+    image: brean/ros2-turtlebot3-remote-pc:foxy
     tty: True
-    container_name: ros-foxy
+    container_name: ros2-turtlebot3-remote-pc-foxy
     build:
       context: ./
       dockerfile: ./Dockerfile
