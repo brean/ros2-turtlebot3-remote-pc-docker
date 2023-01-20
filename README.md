@@ -1,10 +1,10 @@
-# ROS 2 foxy "REMOTE-PC" navigation in docker
+# ROS 2 humble "REMOTE-PC" navigation in docker
 **Note that you don't need to run the build script, the image is pushed to dockerhub, just run `docker-compose pull`!**
 
 Run turtlebot3 REMOTE-PC nodes for navigation and cartographer in a local docker container.
 
 # Motivation
-This allows you either to communicate with a robot that runs ROS 2-foxy while your PC runs another Linux operating system or if you want to test without a full ROS-installation on your PC.
+This allows you either to communicate with a robot that runs ROS 2-humble while your PC runs another Linux operating system or if you want to test without a full ROS-installation on your PC.
 
 We assume you like to run with a simulated robot in Gazebo and use the same network, take a look at [ros2-turtlebot3-gazebo-docker](../ros2-turtlebot3-gazebo-docker) repository.
 
@@ -18,7 +18,7 @@ We assume you like to run with a simulated robot in Gazebo and use the same netw
 
 ## Example
 ### Mapping and navigation with real hardware
-If you have ROS 2 foxy installed on your turtlebot ssh to the robot and run:
+If you have ROS 2 humble installed on your turtlebot ssh to the robot and run:
 ```bash
 export TURTLEBOT3_MODEL=burger
 ros2 launch turtlebot3_bringup robot.launch.py

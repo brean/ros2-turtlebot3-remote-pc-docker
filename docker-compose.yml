@@ -3,17 +3,17 @@ version: '3'
 services:
   remote_pc:
     # run the robot ros core as well as a headless gazebo simulation
-    image: brean/ros2-turtlebot3-remote-pc:foxy
+    image: brean/ros2-turtlebot3-remote-pc:humble
     tty: True
-    container_name: ros2-turtlebot3-remote-pc-foxy
+    container_name: ros2-turtlebot3-remote-pc-humble
     build:
       context: ./
       dockerfile: ./Dockerfile
       args:
-        ROS_DISTRO: foxy
+        ROS_DISTRO: humble
     environment: 
       - DISPLAY
-      - "ROS_DISTRO=foxy"
+      - "ROS_DISTRO=humble"
       - NVIDIA_VISIBLE_DEVICES=all # for docker-nvidia2
       - NVIDIA_DRIVER_CAPABILITIES=all # for docker-nvidia2
     privileged: true  # for gazebo gui
