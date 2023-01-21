@@ -1,0 +1,2 @@
+#!/bin/bash
+./remote.bash ros2 launch turtlebot3_navigation2 navigation2.launch.py map:=/opt/ros/humble/share/nav2_bringup/maps/turtlebot3_world.yaml
