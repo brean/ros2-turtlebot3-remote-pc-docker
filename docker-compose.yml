@@ -16,6 +16,7 @@ services:
       - "ROS_DISTRO=humble"
       - NVIDIA_VISIBLE_DEVICES=all # for docker-nvidia2
       - NVIDIA_DRIVER_CAPABILITIES=all # for docker-nvidia2
+      - RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
     privileged: true  # for gazebo gui
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:ro  # for gazebo gui
