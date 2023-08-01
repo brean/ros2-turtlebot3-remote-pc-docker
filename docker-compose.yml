@@ -5,6 +5,7 @@ services:
     # run the robot ros core as well as a headless gazebo simulation
     image: brean/ros2-turtlebot3-remote-pc:humble
     tty: True
+    network_mode: host
     container_name: ros2-turtlebot3-remote-pc-humble
     build:
       context: ./
@@ -13,17 +14,38 @@ services:
         ROS_DISTRO: humble
     environment: 
       - DISPLAY
+      - ROS_IP=192.168.1.140  # TODO: change to the IP of your host
       - "ROS_DISTRO=humble"
       - NVIDIA_VISIBLE_DEVICES=all # for docker-nvidia2
       - NVIDIA_DRIVER_CAPABILITIES=all # for docker-nvidia2
-    privileged: true  # for gazebo gui
     volumes:
       - /tmp/.X11-unix:/tmp/.X11-unix:ro  # for gazebo gui
       - ./map:/map:z  # to save the map
-    networks:
-      - turtlebot
+    # networks:
+    #   - turtlebot
     # command: ["ros2", "launch", "turtlebot3_cartographer", "cartographer.launch.py"]
 
-networks:
-  turtlebot:
-    external: true
+  # Playstation 4 dualshock 4 controller via usb
+  dualshock_usb:
+    # run the robot ros core as well as a headless gazebo simulation
+    tty: True
+    network_mode: host
+    container_name: ros2-turtlebot3-dualshock
+    build:
+      context: ./ds4
+      dockerfile: ./Dockerfile
+      args:
+        ROS_DISTRO: humble
+    environment: 
+      - DISPLAY
+      - ROS_IP=192.168.1.140  # TODO: change to the IP of your host
+      - "ROS_DISTRO=humble"
+      - NVIDIA_VISIBLE_DEVICES=all # for docker-nvidia2
+      - NVIDIA_DRIVER_CAPABILITIES=all # for docker-nvidia2
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro  # for gazebo gui
+      - /dev:/dev:z
+
+# networks:
+#   turtlebot:
+#     external: true
